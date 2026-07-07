@@ -1,0 +1,375 @@
+.bg {
+    min-height: 100vh;  /* Ensures it covers full height */
+    width: 100%;
+    background: url('https://t4.ftcdn.net/jpg/01/76/82/63/240_F_176826357_1wTr3Xw90T3fCsM5LdyJW9C5VmlVfhBW.jpg') 
+    no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed; /* Ensures it stays fixed */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Centers content */
+    padding: 20px;
+}
+
+  
+  
+  
+.Box{
+   
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    /* margin: 20px; */
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: #d0a0a0;
+}
+.img-c{
+    height: 20%;
+    width: 20%;
+    padding: 10px;
+    border-radius: 15px;
+    border-color: 1px solid black;
+
+}
+
+.Box2{
+    font-size: medium;
+    /* font-weight: bold; */
+    padding: 35px;
+    border-radius: 8px;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    width: 100%;
+    color: rgb(254, 237, 237);
+}
+
+.plan{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #d99a9a;
+    justify-content: center;
+    align-items: center;
+}
+
+.instructions {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Space between left and right sections */
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    margin: 30px auto;
+}
+
+.instructions-left {
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+}
+
+.instructions-img {
+    width: 30px; /* Adjust image size */
+    background: rgb(96, 76, 68);
+    height: auto;
+    border-radius: 50px;
+}
+
+.instructions-left h3 {
+    margin-top: 10px;
+    color: #333;
+    font-size: 1.5rem;
+}
+
+.instructions-right {
+    flex: 1; /* Takes remaining space */
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.btn-nutrition{
+    border-radius: 5px;
+    background: #dfa6a2;
+    
+}
+.btn-nutrition a{
+   color: black;
+    text-decoration: none;
+}
+.btn-nutrition:hover{
+    background: #9a6363;
+ }
+
+
+.utube{
+    border-radius: 50%;
+    background: #ce0f0f;
+}
+
+
+.ingredients-title {
+    font-size: 25px;
+    font-weight: bold;
+    color: #f4ecec;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.ingredients-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.ingredient-card {
+    background: linear-gradient(135deg, #ba8385, #fad0c4);
+    padding: 12px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 140px;
+    transition: 0.3s;
+}
+
+.ingredient-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 8px;
+}
+
+.ingredient-card p {
+    font-size: 14px;
+    font-weight: bold;
+    color: #222;
+    margin: 5px 0;
+}
+
+.ingredient-card span {
+    display: block;
+    font-size: 12px;
+    color: #555;
+}
+
+.ingredient-card:hover {
+    transform: scale(1.05);
+}
+
+.youtube-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #3b2b2b;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.youtube-button {
+    background: none;
+    border: none;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.youtube-button h3 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.youtube-button p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #ccc;
+}
+
+.utube {
+    width: 80px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.youtube-link {
+    background-color: red;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.youtube-link:hover {
+    background-color: darkred;
+}
+
+
+/* .youtube-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.youtube-video {
+    width: 100%;
+    max-width: 560px;
+    height: 315px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+} */
+
+
+.btn-update, .btn-save, .btn-delete {
+    background: linear-gradient(rgb(122, 65, 65), #e27e7e, #983d3d);
+    color:black;
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+
+  .form-container{
+    width: 100%;
+    background: url('https://t4.ftcdn.net/jpg/01/76/82/63/240_F_176826357_1wTr3Xw90T3fCsM5LdyJW9C5VmlVfhBW.jpg') 
+    no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+ /* Update Form Styling */
+.update-form {
+    margin-left: 280px;
+    padding: 40px;
+    
+    
+    max-width: 700px; /* Increased width for better spacing */
+    width: 100%;
+    border-radius: 8px;
+    /* background:#d0a0a0; */
+    backdrop-filter: blur(5px);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    color: rgb(255, 247, 247);
+}
+
+/* Form Title */
+.update-form .title {
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 1px rgba(161, 98, 98, 0.6);
+    color: #7a3e3e;
+}
+
+/* Form Row for Two Inputs Side by Side */
+.form-row {
+    display: flex;
+    gap: 15px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* Each Form Group Takes Half Width */
+.form-row .form-group {
+    flex: 1;
+    min-width: 45%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* Form Input Fields */
+.update-form .form-control {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    background: rgba(218, 110, 110, 0.1);
+    color: rgb(253, 249, 249);
+    border-radius: 8px;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Placeholder Color */
+.update-form .form-control::placeholder {
+    color: rgba(246, 245, 245, 0.7);
+}
+
+/* Focus Effect */
+.update-form .form-control:focus {
+    border-color: #e68c8c;
+    background: rgba(181, 109, 109, 0.2);
+}
+
+/* Update Button */
+.update-form .btn-update {
+    padding: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(97, 45, 45);
+    background: linear-gradient(45deg, #df9494, #ea5a5a);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, background 0.3s ease-in-out;
+    width: 100%;
+}
+
+/* Update Button Hover */
+.update-form .btn-update:hover {
+    background: linear-gradient(45deg, #f19f9f, #ed3225);
+    transform: scale(1.05);
+}
+
+/* Labels */
+.update-form .form-group label {
+    font-weight: bold;
+    font-size: 16px;
+    color: #faf5f5;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.ingr{
+    font-weight: bold;
+    text-align: center;
+    color: #7a3e3e;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .Box{
+        flex-direction: column;
+    }
+    .form-row {
+        flex-direction: column;
+    }
+    .form-row .form-group {
+        min-width: 100%;
+    }
+}
+
+
+  

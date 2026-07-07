@@ -1,0 +1,10 @@
+<div class="container">
+    <h2>Random Meals</h2>
+    <div class="meals">
+      <div class="meal-card" *ngFor="let meal of randomMeals" (click)="moreInfo(meal)">
+        <img [src]="meal.strMealThumb" alt="{{ meal.strMeal }}" />
+        <p>{{ meal.strMeal }}</p>
+      </div>
+    </div>
+  </div>
+  

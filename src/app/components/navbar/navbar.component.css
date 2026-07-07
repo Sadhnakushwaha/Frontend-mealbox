@@ -1,0 +1,48 @@
+.container-fluid{
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 5px;
+}
+
+/* Navbar logo */
+.logo {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+/* Website name styling */
+.brand-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #f8b400;
+}
+
+/* Adjust navbar links alignment */
+.navbar-nav {
+  display: flex;
+  gap: 15px;
+}
+
+/* Hover effects */
+.navbar-nav .nav-link {
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #f8b400;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar-nav {
+      text-align: center;
+      width: 100%;
+  }
+
+  .navbar-nav .nav-item {
+      margin-bottom: 5px;
+  }
+}

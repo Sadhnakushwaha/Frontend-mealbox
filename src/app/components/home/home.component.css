@@ -1,0 +1,122 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+h2{
+  padding-top: 80px;
+  color: whitesmoke;
+  margin-bottom: 20px;
+}
+
+.container {
+    max-width: 100% !important; /* Override Bootstrap's container width */
+    background: url('https://img.freepik.com/premium-photo/ingredients-cooking-black-food-background-free-space-your-text_712895-3827.jpg') 
+    no-repeat center center fixed;
+    background-size: cover;
+    /* height: 95vh; Full viewport height */
+    width: 100vw; /* Full viewport width */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding-top: 20px;
+    padding-bottom: 120px;
+
+}
+
+  
+/* .container {
+    text-align: center;
+  } */
+  
+  .categories,
+  .meals {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2px; 
+  }
+  
+  
+  .category-card,
+  .meal-card {
+    background:linear-gradient(rgb(175, 89, 89), #864949, #eb8d8d);
+    color: white;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    text-align: center;
+    width: 150px;
+    
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    
+  
+  }
+  .category-card:hover,
+.meal-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+  
+  .category-card img,
+  .meal-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+
+  /* Responsive Design */
+@media (max-width: 768px) {
+
+  .container {
+    height: auto;
+  }
+
+  .category-card,
+  .meal-card {
+      
+      width: 140px;
+      padding: 12px;
+  }
+
+  .category-card h3,
+  .meal-card h2 {
+      font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  
+  .category-card,
+  .meal-card {
+   
+      width: 100px;
+      padding: 2px;
+  }
+
+  .category-card h3,
+  .meal-card h2 {
+      font-size: 12px;
+  }
+
+  .category-card img,
+  .meal-card img {
+      width: 80px;
+      height: 80px;
+  }
+}
+
+  
+
+app-random-meal {
+  display: block;
+  width: 100%;
+  background: inherit;
+}

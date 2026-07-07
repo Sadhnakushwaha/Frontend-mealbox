@@ -1,0 +1,79 @@
+<div class="add-meal-container">
+    <h2 class="title">Add New Meal</h2>
+    <form [formGroup]="mealForm" (ngSubmit)="addMeal()" class="meal-form">
+      
+      <div class="form-group">
+        <label>Meal Name: <span class="required">*</span></label>
+        <input type="text" formControlName="strMeal" class="form-control" required />
+        <div *ngIf="mealForm.get('strMeal')?.invalid && mealForm.get('strMeal')?.touched" class="error">
+          Meal Name is required. Test:{{mealForm.get('strMeal')?.errors|json}}
+          Touched: {{ mealForm.get('strMeal')?.touched }}
+          Required Error: {{ mealForm.get('strMeal')?.hasError('required') }}  
+    Pattern Error: {{ mealForm.get('strMeal')?.hasError('pattern') }}  
+  
+
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label>Category: <span class="required">*</span></label>
+        <select formControlName="category" class="form-control">
+          <option class="options" *ngFor="let cat of categories" [value]="cat.idCategory">
+            {{ cat.strCategory }}
+          </option>
+        </select>
+        <div *ngIf="mealForm.get('category')?.invalid && mealForm.get('category')?.touched" class="error">
+          Category is required.
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label>Area:</label>
+        <input type="text" formControlName="strArea" class="form-control" />
+      </div>
+  
+      <div class="form-group">
+        <label>Instructions: <span class="required">*</span></label>
+        <textarea formControlName="strInstructions" class="form-control" rows="3"></textarea>
+        <div *ngIf="mealForm.get('strInstructions')?.invalid && mealForm.get('strInstructions')?.touched" class="error">
+          Instructions are required.
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label>Meal Thumbnail URL:</label>
+        <input type="text" formControlName="strMealThumb" class="form-control" />
+      </div>
+  
+      <div class="form-group">
+        <label>Tags (comma-separated):</label>
+        <input type="text" formControlName="strTags" class="form-control" />
+      </div>
+  
+      <div class="form-group">
+        <label>YouTube Link:</label>
+        <input type="text" formControlName="strYoutube" class="form-control" />
+      </div>
+  
+      <h3 class="sub-title">Ingredients & Measurements</h3>
+      <div *ngFor="let i of [1, 2, 3, 4, 5]" class="ingredient-group">
+        <div class="form-group">
+          <label>Ingredient {{ i }}:</label>
+          <input type="text" [formControlName]="'strIngredient' + i" class="form-control" />
+        </div>
+  
+        <div class="form-group">
+          <label>Measurement {{ i }}:</label>
+          <input type="text" [formControlName]="'strMeasure' + i" class="form-control" />
+        </div>
+      </div>
+  
+      <button type="submit" [disabled]="mealForm.invalid" class="btn btn-success">Add Meal</button>
+      Form Valid: {{ mealForm.valid }}  
+      Form Invalid: {{ mealForm.invalid }}
+
+    </form>
+  </div>
+  
+
+ 

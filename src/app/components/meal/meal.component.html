@@ -1,0 +1,83 @@
+
+    <div class="container">
+        <!-- <h1>Meal Browser</h1> -->
+        
+        <div class="content">
+            <!-- Sidebar for Filters -->
+            <div class="sidebar">
+                <!-- Search Bar -->
+                <div class="search-container">
+                    <input [(ngModel)]="searchQuery" (ngModelChange)="searchMeals()" type="text" placeholder="Search meal by name..." />
+                    <button (click)="searchMeals()">Search</button>
+                </div>
+    
+                <!-- Filter Section -->
+                <div class="filter-container">
+                    
+                    <select [(ngModel)]="selectedCategory" (change)="filterByCategory()"  >
+                        <option value="">Select Category</option>
+                        <option *ngFor="let category of categories" [value]="category.strCategory">
+                            {{ category.strCategory }}
+                        </option>
+                    </select>
+    
+                    <!-- <input [(ngModel)]="selectedIngredient" type="text" placeholder="Filter by Ingredient..."  (ngModelChange)="filterByIngredient()" />
+                    <button (click)="filterByIngredient()">Filter</button>
+    
+                    <input [(ngModel)]="selectedArea"   type="text" placeholder="Filter by Area..." (ngModelChange)="filterByArea()" />
+                    <button (click)="filterByArea()">Filter</button> -->
+
+                    <input [(ngModel)]="selectedIngredient" type="text" placeholder="Filter by Ingredient..." (ngModelChange)="applyFilters()"/>
+                    
+                    <input [(ngModel)]="selectedArea" type="text" placeholder="Filter by Area..." (ngModelChange)="applyFilters()" />
+                
+                    <button (click)="applyFilters()">Filter</button>
+                </div>
+            </div>
+    
+            <!-- Right Section for Meal Cards -->
+            <div class="meals">
+
+                <div *ngIf="meals.length === 0" class="no-meals">No meal available</div>
+
+
+                <div class="meal-card" *ngFor="let meal of meals; let i = index" (click)="toggleFlip(i)">
+                    <div class="card-inner" [class.flipped]="flippedCards[i]">
+                        <div class="card-front">
+                            <img [src]="meal.strMealThumb" alt="{{ meal.strMeal }}" />
+                            <h3>{{ meal.strMeal }}</h3>
+                        </div>
+                        <div class="card-back">
+                            <p><i class="fa fa-utensils"></i> 🍽️ Category- {{ meal.category?.strCategory }} </p>  
+                            <p>🌍 {{ meal.strArea }} </p> 
+                            <a [href]="meal.strYoutube" target="_blank" class="utube">
+                                ▶️ Watch on YouTube
+                            </a>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+<!-- Search Bar For together-->
+<!-- <input [(ngModel)]="searchQuery" (input)="searchMeals()" type="text" placeholder="Search meal by name..." />
+<button (click)="searchMeals()">Search</button>
+
+
+<select [(ngModel)]="selectedCategory" (change)="filterByCategory()">
+    <option value="">Select Category</option>
+    <option *ngFor="let category of categories" [value]="category.strCategory">{{ category.strCategory }}</option>
+</select>
+
+<input [(ngModel)]="selectedIngredient" (input)="filterByIngredient()" type="text" placeholder="Filter by Ingredient..." />
+<button (click)="filterByIngredient()">Filter</button>
+
+<input [(ngModel)]="selectedArea" (input)="filterByArea()" type="text" placeholder="Filter by Area..." />
+<button (click)="filterByArea()">Filter</button> -->

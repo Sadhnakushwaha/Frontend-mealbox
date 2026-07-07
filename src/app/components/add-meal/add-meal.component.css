@@ -1,0 +1,116 @@
+/* Background Image Styling */
+.add-meal-container {
+    background: url('https://img.freepik.com/free-photo/various-vegetables-black-table-with-space-message_1220-616.jpg?ga=GA1.1.2094338835.1740474014&semt=ais_hybrid') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    color: white;
+}
+
+/* Form Layout */
+.meal-form {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+}
+
+/* Form Groups */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    position: relative;
+}
+
+.form-group .options{
+    color: black;
+}
+
+/* Labels */
+.form-group label {
+    font-weight: bold;
+    font-size: 16px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Input Fields */
+.form-control {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    background: rgba(218, 110, 110, 0.1);
+    color: white;
+    border-radius: 8px;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Placeholder Color */
+.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Focus Effect */
+.form-control:focus {
+    border-color: #e68c8c;
+    background: rgba(218, 38, 38, 0.2);
+}
+
+/* Ingredients Section */
+.ingredient-group {
+    display: flex;
+    gap: 10px;
+}
+
+/* Title Styling */
+.title {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
+    color: #f8b400;
+}
+
+/* Submit Button */
+.btn-success {
+    
+    padding: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(45deg, #df9494, #ea5a5a);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, background 0.3s ease-in-out;
+}
+
+/* Button Hover */
+.btn-success:hover {
+    background: linear-gradient(45deg, #f19f9f, #ed3225);
+    transform: scale(1.05);
+}
+
+
+.required {
+    color: red;
+    font-weight: bold;
+  }
+  
+  .error {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 5px;
+  }
+  

@@ -1,0 +1,37 @@
+<div class="contain">
+    <!-- 🔹 Heading -->
+<div class="heading">
+    <br>
+    <h2>Simple Recipes that Bring a Smile with Every Bite</h2>
+
+
+    
+</div>
+
+<!-- 🔹 Browse by Letter -->
+<div class="browse-letters">
+    <span *ngFor="let letter of letters" (click)="searchByLetter(letter)" class="letter">{{ letter }}</span>
+</div>
+
+
+<!-- 🔹 Meals Grid -->
+<div *ngIf="selectedLetter">
+    <div class="card-group" *ngIf="Meals.length > 0; else noMeals">
+        <div *ngFor="let meal of Meals" class="container">
+            <div class="meal-card" (click)="moreInfo(meal)">
+                <img [src]="meal.strMealThumb" alt="{{ meal.strMeal }}" />
+                <h2 class="card-title"> {{ meal.strMeal }}</h2>
+                <div class="card-body text-success"> <strong>-{{ meal.category?.strCategory }}</strong> </div>       
+            </div>
+        </div>
+    </div>
+
+    <!-- 🔹 Show "No Meal Available" only if a letter is selected -->
+    <ng-template #noMeals>
+        <div class="not-available">
+            <h3>  No Meal Available</h3>
+        </div>
+    </ng-template>
+</div>
+
+</div>

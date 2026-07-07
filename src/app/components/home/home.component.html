@@ -1,0 +1,27 @@
+<div class="container">
+    <h2>Categories</h2>
+    <div class="categories">
+      <div
+        class="category-card"
+        *ngFor="let category of categories " 
+        (click)="fetchMeals(category.strCategory)"
+      >
+        <img [src]="category.strCategoryThumb" alt="{{ category.strCategory }}" />
+        <p>{{ category.strCategory }}</p>
+      </div>
+    </div>
+  
+    <h2 *ngIf="meals.length > 0">Meals in {{ selectedCategory }}</h2>
+    <div class="meals" *ngIf="meals.length > 0">
+      <div class="meal-card"  *ngFor="let meal of meals" (click)="moreInfo(meal)">
+        <img [src]="meal.strMealThumb" alt="{{ meal.strMeal }}" />
+        <p>{{ meal.strMeal }}</p>
+      </div>
+    </div>
+  </div>
+
+  
+  <app-meal-letter></app-meal-letter>
+
+
+  <app-random-meal></app-random-meal>

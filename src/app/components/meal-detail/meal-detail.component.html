@@ -1,0 +1,204 @@
+<div *ngIf="meal" class="meal-details">
+
+    <div class="Box">
+        <h1 >{{ meal.strMeal }}</h1>
+    <img  class="img-c"   [src]="meal.strMealThumb" alt="{{ meal.strMeal }}" />
+    <!-- Update Meal Button -->
+        
+            <button (click)="toggleEditMode()" class="btn-update">Update Meal</button>
+
+<!-- Delete Meal Button -->
+<button  (click)="deleteMeal()" class="btn-delete">Delete Meal</button>
+        
+
+
+    </div>
+
+
+
+
+<!-- Update Meal Form (Appears when editMode is true) -->
+ <!-- Update Meal Form (Appears when editMode is true) -->
+ 
+ <div class="form-container">
+    <br>
+    <div *ngIf="editMode" class="update-form">
+        <h2 class="title">Update Meal</h2>
+    
+        <div class="form-row">
+            <div class="form-group">
+                <label>Meal Name:</label>
+                <input type="text" [(ngModel)]="meal.strMeal" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Category:</label>
+                <input type="text" [(ngModel)]="meal.category.strCategory" class="form-control">
+            </div>
+        </div>
+    
+        <div class="form-row">
+            <div class="form-group">
+                <label>Area:</label>
+                <input type="text" [(ngModel)]="meal.strArea" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Difficulty Level:</label>
+                <input type="text" [(ngModel)]="meal.strCreativeCommonsConfirmed" class="form-control">
+            </div>
+        </div>
+    
+        <div class="form-group">
+            <label>Instructions:</label>
+            <textarea [(ngModel)]="meal.strInstructions" class="form-control"></textarea>
+        </div>
+    
+        <div class="form-row">
+            <div class="form-group">
+                <label>Tags:</label>
+                <input type="text" [(ngModel)]="meal.strTags" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Video Link:</label>
+                <input type="text" [(ngModel)]="meal.strYoutube" class="form-control">
+            </div>
+        </div>
+    
+        <div class="form-row">
+            <div class="form-group">
+                <label>Source:</label>
+                <input type="text" [(ngModel)]="meal.strSource" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Image Source:</label>
+                <input type="text" [(ngModel)]="meal.strImageSource" class="form-control">
+            </div>
+        </div>
+    
+        <div class="form-row">
+            <div class="form-group">
+                <label>Meal Thumbnail:</label>
+                <input type="text" [(ngModel)]="meal.strMealThumb" class="form-control">
+            </div>
+        </div>
+    
+        <h4 class="ingr">Ingredients & Measures:</h4>
+        <div *ngFor="let i of [1,2,3,4,5]" class="form-row">
+            <div class="form-group">
+                <label>Ingredient {{ i }}:</label>
+                <input type="text" [(ngModel)]="meal['strIngredient' + i]" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Measure {{ i }}:</label>
+                <input type="text" [(ngModel)]="meal['strMeasure' + i]" class="form-control">
+            </div>
+        </div>
+    
+        <button (click)="updateMeal()" class="btn-save">Save Changes</button>
+    </div>
+    
+ </div>
+
+
+
+
+
+
+
+   
+    <div class="bg">
+
+        <h3 class="ingredients-title">Ingredients:</h3>
+    <div class="ingredients-container">
+        <div *ngIf="meal.strIngredient1" class="ingredient-card">
+            <img [src]="'https://www.themealdb.com/images/ingredients/' + meal.strIngredient1 + '-Small.png'" alt="{{ meal.strIngredient1 }}" />
+            <p>{{ meal.strIngredient1 }}</p>
+            <span>{{ meal.strMeasure1 }}</span>
+        </div>
+    
+        <div *ngIf="meal.strIngredient2" class="ingredient-card">
+            <img [src]="'https://www.themealdb.com/images/ingredients/' + meal.strIngredient2 + '-Small.png'" alt="{{ meal.strIngredient2 }}" />
+            <p>{{ meal.strIngredient2 }}</p>
+            <span>{{ meal.strMeasure2 }}</span>
+        </div>
+    
+        <div *ngIf="meal.strIngredient3" class="ingredient-card">
+            <img [src]="'https://www.themealdb.com/images/ingredients/' + meal.strIngredient3 + '-Small.png'" alt="{{ meal.strIngredient3 }}" />
+            <p>{{ meal.strIngredient3 }}</p>
+            <span>{{ meal.strMeasure3 }}</span>
+        </div>
+    
+        <div *ngIf="meal.strIngredient4" class="ingredient-card">
+            <img [src]="'https://www.themealdb.com/images/ingredients/' + meal.strIngredient4 + '-Small.png'" alt="{{ meal.strIngredient4 }}" />
+            <p>{{ meal.strIngredient4 }}</p>
+            <span>{{ meal.strMeasure4 }}</span>
+        </div>
+    
+        <div *ngIf="meal.strIngredient5" class="ingredient-card">
+            <img [src]="'https://www.themealdb.com/images/ingredients/' + meal.strIngredient5 + '-Small.png'" alt="{{ meal.strIngredient5 }}" />
+            <p>{{ meal.strIngredient5 }}</p>
+            <span>{{ meal.strMeasure5 }}</span>
+        </div>
+    </div>
+    
+
+    <div class="Box2">
+        <p>
+            <img src="https://www.foodfood.com/wp-content/themes/twentytwentyone/assets/img/Mask%20group%20(1).png" alt="">
+            <strong> Category:</strong> {{ meal.category?.strCategory }}</p>
+         <p>
+            <img  src="https://www.foodfood.com/wp-content/themes/twentytwentyone/assets/img/Mask%20group.png" alt="">
+            <strong> Cuisine:</strong> {{ meal.strArea }}</p>
+
+        <p>
+            <img src="https://www.foodfood.com/wp-content/themes/twentytwentyone/assets/img/Mask%20group%20(4).png" alt="">
+            <strong> Tag:</strong> {{ meal.strTags }}</p>
+
+        <p>
+            <img src="https://www.foodfood.com/wp-content/themes/twentytwentyone/assets/img/Mask%20group%20(2).png" alt="">
+            <strong>  Difficulty Level:</strong> {{ meal.strCreativeCommonsConfirmed }}</p>
+
+        <p class="plan"> <strong>Know more about your nutrition Plan:  </strong> 
+         <button class="btn-nutrition">
+            <a [href]="meal.strSource" target="_blank"> Know more</a>
+         </button>
+        </p> 
+    </div>
+
+    </div>
+
+    <div class="instructions">
+        <div class="instructions-left">
+            <img src="https://www.foodfood.com/wp-content/themes/twentytwentyone/assets/img/Mask%20group%20(3).png" 
+                 alt="Instructions" class="instructions-img"> 
+            <h3>Instructions:</h3>
+        </div>
+    
+        <div class="instructions-right">
+            <p>{{ meal.strInstructions }}</p>
+        </div>
+    </div>
+    
+
+    <div class="youtube-box">
+        <button class="youtube-button">
+            <h3>Watch the Recipe & Try Cooking It Yourself!</h3>
+            <p>Follow along with the step-by-step video tutorial and make this delicious dish at home.</p>
+            
+            <a [href]="meal.strYoutube" target="_blank" class="youtube-link">
+                ▶ YouTube
+            </a>
+        </button>
+    </div>
+    
+
+    <!-- <div class="youtube-container" *ngIf="meal.strYoutube">
+        <iframe 
+            [src]="getSafeUrl(meal.strYoutube)" 
+            class="youtube-video"
+            frameborder="0"
+            allowfullscreen>
+        </iframe>
+    </div> -->
+    
+    
+</div>

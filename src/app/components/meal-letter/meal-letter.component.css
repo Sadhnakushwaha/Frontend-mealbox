@@ -1,0 +1,114 @@
+.contain {
+   background: #edd9d9;
+   margin: 0px 0px 0px 0px;
+   padding: 10px;
+}
+
+.heading{
+    text-align: center;
+    margin: 20px 0;
+}
+.browse-letters {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.letter {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 5px;
+    cursor: pointer;
+    text-align: center;
+    padding: 10px 10px 10px 15px;
+    border-radius: 10px;
+    display: inline-block;
+    transition: background 0.3s ease;
+    color: #edd9d9;
+    background: #d38888;
+}
+
+.letter:hover {
+    background: #9d6969;
+    color: rgb(64, 38, 38);
+}
+
+
+.card-group{
+    display:grid;
+   
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding:10px;
+    justify-content: center;
+}
+
+/* Style for each meal card */
+.meal-card {
+
+    background: #eccbcb;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 4px 6px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    text-align: center;
+    cursor: pointer;
+    padding: 15px;
+}
+
+.meal-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Image styling */
+.meal-card img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Meal Title */
+.meal-card .card-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0;
+    color: #333;
+}
+
+/* Category Label */
+.meal-card .card-body {
+    font-size: 14px;
+    color: #ff6600;
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .card-group {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .meal-card {
+        padding: 12px;
+    }
+
+    .meal-card img {
+        height: 160px;
+    }
+
+    .meal-card .card-title {
+        font-size: 16px;
+    }
+}
+
+.not-available {
+    
+    text-align: center;
+    font-size: 15px;
+    /* font-weight: bold; */
+    color: red;
+    
+    margin-top: 20px;
+    margin-bottom: 40px;
+}

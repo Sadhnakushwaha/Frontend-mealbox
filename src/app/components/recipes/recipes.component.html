@@ -1,0 +1,26 @@
+<div class="heading">
+    <h2>Simple Recipes that Bring a Smile with Every Bite</h2>
+    Now It's time to search for your favorite meal recipe
+</div>
+
+
+<div class="btn-container">
+    <button routerLink="/add-meal" routerLinkActive="active" class="btn">
+        Add your recipe
+    </button>
+    <br>
+</div>
+
+
+<div class="card-group">
+    <div *ngFor="let meals of Meals" class="container">
+        <div class="meal-card" (click)="moreInfo(meals)">
+
+         <img [src]="meals.strMealThumb" alt="{{ meals.strMeal }}" />
+ 
+         <h2 class="card-title"> {{meals.strMeal }}</h2>
+ 
+         <div class="card-body text-success"> category <strong>-{{ meals.category?.strCategory }}</strong> </div>       
+        </div>
+ </div>
+</div>
